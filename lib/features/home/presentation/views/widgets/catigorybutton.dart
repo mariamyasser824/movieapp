@@ -9,8 +9,7 @@ class Catigorybutton extends StatefulWidget {
 }
 
 class _CatigorybuttonState extends State<Catigorybutton> {
-  var color = const Color(0xFF1F1D35);
-  bool check = false;
+
   final String text;
 
   _CatigorybuttonState(this.text);
@@ -18,15 +17,9 @@ class _CatigorybuttonState extends State<Catigorybutton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      splashColor: Color(0xFFDF0C31),
       onTap: () {
-        if (check == true) {
-          color = const Color(0xFF1F1D35);
-        } else {
-          color = const Color(0xFFDF0C31);
-        }
-        setState(() {
-          check = !check;
-        });
+
         Navigator.pushNamed(context, "categoryscreen", arguments: text);
       },
       child: Container(

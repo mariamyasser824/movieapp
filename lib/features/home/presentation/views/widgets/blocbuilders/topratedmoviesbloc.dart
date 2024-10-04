@@ -41,9 +41,9 @@ class _TopratedmoviesblocState extends State<Topratedmoviesbloc> {
                             // "gener":state.Movies[index].genres![index].name
                             });
                       },
-                child: SizedBox(
-                  width: 300.w,
-                  height: 250.h,
+                child: Container(
+                  width: double.infinity,
+                  // height: 150.h,
                   child: Image(
                     image: NetworkImage(
                         "https://image.tmdb.org/t/p/w500${state.Movies[itemIndex].posterPath}"),
@@ -52,19 +52,16 @@ class _TopratedmoviesblocState extends State<Topratedmoviesbloc> {
                 ),
               ),
               options: CarouselOptions(
-                height: 150,
-                aspectRatio: 16 / 9,
-                viewportFraction: 0.8,
+                height: 250,
+                viewportFraction: 1.2,
                 initialPage: 0,
                 enableInfiniteScroll: true,
-                reverse: true,
+                reverse: false,
                 autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 2),
-                autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                autoPlayInterval: const Duration(seconds: 3),
+                autoPlayAnimationDuration: const Duration(milliseconds: 600),
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enlargeCenterPage: true,
-                enlargeFactor: 0.3,
-                pageSnapping: true,
                 scrollDirection: Axis.horizontal,
                 onPageChanged: (itemIndex, reason) {
                   setState(() {

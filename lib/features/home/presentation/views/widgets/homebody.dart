@@ -16,14 +16,11 @@ class Homebody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Padding(
-            padding: EdgeInsets.only(top: 25),
-            child: Topratedmoviesbloc()),
-        Expanded(
-          child: CustomScrollView(
+    return  CustomScrollView(
             slivers: [
+              SliverToBoxAdapter(child: const Padding(
+                  padding: EdgeInsets.only(top: 15),
+                  child: Topratedmoviesbloc()) ,),
               const SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
@@ -96,9 +93,8 @@ class Homebody extends StatelessWidget {
                 child: Upcomingmoviesbloc(),
               ),
             ],
-          ),
-        ),
-      ],
-    );
+          )
+
+    ;
   }
 }
